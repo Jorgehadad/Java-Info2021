@@ -45,6 +45,22 @@ public class App {
             System.out.println( "Ejemplo del Cálculo del factorial de un número en Java" );
             System.out.println( "El factorial de " + numero + " es: " + factorial(numero)); 
 
+        case 5:
+        //Se desea una aplicación que solicite 2 números enteros
+        // y realice la operación de multiplicación por sumas sucesivas (sin uso de librerías).
+        System.out.println("Ingrese el primer número");
+        String entrada6 = br.readLine(); //Se guarda la entrada en una variable
+        int nume1 = Integer.parseInt(entrada6);//Se transforma la entrada anterior en un entero
+        System.out.println("Ingrese el segundo número");
+        String entrada7 = br.readLine(); //Se guarda la entrada en una variable
+        int nume2 = Integer.parseInt(entrada7);//Se transforma la entrada anterior en un entero
+        int vari = nume1; 
+        for (int i = 1; i < (nume2); i++) {
+            vari = vari + nume1;
+        };
+        System.out.println(nume1 + "*" + nume2 + " =" + " " + (vari));
+
+
         default:
             System.out.println("No hay coincidencias");
             break; //Transfiere el control fuera del switch
@@ -60,4 +76,6 @@ public class App {
         }
         return fact;
     }
+
+
 }
