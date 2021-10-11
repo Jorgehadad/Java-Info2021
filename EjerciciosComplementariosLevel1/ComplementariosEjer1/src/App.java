@@ -32,15 +32,32 @@ public class App {
             System.out.println("Ingrese el número de la secuencia");
             String entrada4 = br.readLine(); //Se guarda la entrada en una variable
             int num3 = Integer.parseInt(entrada4);//Se transforma la entrada anterior en un entero
-            String var = " ";
+            String var = "";
             for (int i = 1; i < (num3 + 1); i++) {
                 var = var + " " + String.valueOf( i);
                 System.out.println(var);
-            }
+            };
+        case 4:
+            System.out.println("Ingrese el número para calcular el factorial");
+            String entrada5 = br.readLine();
+            int numero = Integer.parseInt(entrada5);
+      
+            System.out.println( "Ejemplo del Cálculo del factorial de un número en Java" );
+            System.out.println( "El factorial de " + numero + " es: " + factorial(numero)); 
+
         default:
             System.out.println("No hay coincidencias");
             break; //Transfiere el control fuera del switch
 }
     System.out.println("Fin del programa.");
+    }
+
+    //funciones ------------ no me deja ponerlas en el void
+    public static int factorial( int numero ) {
+        int fact = 1;
+        for( int i = 1; i <= numero; i++ ) {
+           fact *= i;
+        }
+        return fact;
     }
 }
