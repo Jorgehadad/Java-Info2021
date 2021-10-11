@@ -16,8 +16,27 @@ public class App {
             System.out.println("HOLA " + nombre);
             break;  //Transfiere el control fuera del switch
         case 2:
-            System.out.println("Acá va la 2da opción");
+            System.out.println("Ingrese el primer número");
+            String entrada2 = br.readLine(); //Se guarda la entrada en una variable
+            int num1 = Integer.parseInt(entrada2);//Se transforma la entrada anterior en un entero
+            System.out.println("Ingrese el segundo número");
+            String entrada3 = br.readLine(); //Se guarda la entrada en una variable
+            int num2 = Integer.parseInt(entrada3);//Se transforma la entrada anterior en un entero
+            System.out.println(num1 + "+" + num2 + "=" + " " + (num1 + num2));
+            System.out.println(num1 + "-" + num2 + "=" + " " + (num1 - num2));
+            System.out.println(num1 + "*" + num2 + "=" + " " + (num1 * num2));
+            System.out.println(num1 + "/" + num2 + "=" + " " + (num1 / num2));
+            System.out.println(num1 + "%" + num2 + "=" + " " + (num1 % num2));
             break; //Transfiere el control fuera del switch
+        case 3:
+            System.out.println("Ingrese el número de la secuencia");
+            String entrada4 = br.readLine(); //Se guarda la entrada en una variable
+            int num3 = Integer.parseInt(entrada4);//Se transforma la entrada anterior en un entero
+            String var = " ";
+            for (int i = 1; i < (num3 + 1); i++) {
+                var = var + " " + String.valueOf( i);
+                System.out.println(var);
+            }
         default:
             System.out.println("No hay coincidencias");
             break; //Transfiere el control fuera del switch
