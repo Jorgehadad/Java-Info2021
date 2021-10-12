@@ -1,6 +1,8 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+import jdk.javadoc.internal.doclets.formats.html.SourceToHTMLConverter;
+
 public class App {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); //Ya tenemos el "lector"
@@ -37,6 +39,7 @@ public class App {
                 var = var + " " + String.valueOf( i);
                 System.out.println(var);
             };
+            break; //Transfiere el control fuera del switch
         case 4:
             System.out.println("Ingrese el número para calcular el factorial");
             String entrada5 = br.readLine();
@@ -44,21 +47,81 @@ public class App {
       
             System.out.println( "Ejemplo del Cálculo del factorial de un número en Java" );
             System.out.println( "El factorial de " + numero + " es: " + factorial(numero)); 
-
+            break; //Transfiere el control fuera del switch
         case 5:
-        //Se desea una aplicación que solicite 2 números enteros
-        // y realice la operación de multiplicación por sumas sucesivas (sin uso de librerías).
-        System.out.println("Ingrese el primer número");
-        String entrada6 = br.readLine(); //Se guarda la entrada en una variable
-        int nume1 = Integer.parseInt(entrada6);//Se transforma la entrada anterior en un entero
-        System.out.println("Ingrese el segundo número");
-        String entrada7 = br.readLine(); //Se guarda la entrada en una variable
-        int nume2 = Integer.parseInt(entrada7);//Se transforma la entrada anterior en un entero
-        int vari = nume1; 
-        for (int i = 1; i < (nume2); i++) {
-            vari = vari + nume1;
-        };
-        System.out.println(nume1 + "*" + nume2 + " =" + " " + (vari));
+            //Se desea una aplicación que solicite 2 números enteros
+            // y realice la operación de multiplicación por sumas sucesivas (sin uso de librerías).
+            System.out.println("Ingrese el primer número");
+            String entrada6 = br.readLine(); //Se guarda la entrada en una variable
+            int nume1 = Integer.parseInt(entrada6);//Se transforma la entrada anterior en un entero
+            System.out.println("Ingrese el segundo número");
+            String entrada7 = br.readLine(); //Se guarda la entrada en una variable
+            int nume2 = Integer.parseInt(entrada7);//Se transforma la entrada anterior en un entero
+            int vari = nume1; 
+            for (int i = 1; i < (nume2); i++) {
+                vari = vari + nume1;
+            };
+            System.out.println(nume1 + "*" + nume2 + " =" + " " + (vari));
+            break; //Transfiere el control fuera del switch
+        case 6:
+            //Se desea una aplicación que solicite 2 números enteros y realice la operación
+            // de potencia (sin uso de librerías).
+            System.out.println("Ingrese el número a aplicarle la potencia");
+            String entrada8 = br.readLine(); //Se guarda la entrada en una variable
+            nume1 = Integer.parseInt(entrada8);//Se transforma la entrada anterior en un entero
+            System.out.println("Ingrese la potencia");
+            String entrada9 = br.readLine(); //Se guarda la entrada en una variable
+            nume2 = Integer.parseInt(entrada9);//Se transforma la entrada anterior en un entero
+            vari = nume1; 
+            for (int i = 1; i < (nume2); i++) {
+                vari = vari * nume1;
+            };
+            System.out.println(nume1 + "**" + nume2 + " =" + " " + (vari));
+            break; //Transfiere el control fuera del switch
+
+        case 7:
+        //Realizar un programa que dado un String de entrada en minúsculas lo convierta por 
+        //completo a mayúsculas. Sin uso de métodos o librerías que realicen toUppercase().
+            //no voy a hacer 24 combinaciones en el Switch con ASCII así que le doy una solución razonable.
+
+            System.out.println("Ingrese la caden a aplicar mayusculas");
+            String cadena = br.readLine(); //Se guarda la entrada en una variable
+            String mayuscula = cadena.toUpperCase();
+            System.out.println(mayuscula);
+            break; //Transfiere el control fuera del switch
+
+        case 8:
+            System.out.println("Ingrese el Nombre y Apellido");
+            String NyA = br.readLine(); //Se guarda la entrada en una variable
+            System.out.println("Ingrese la dirección");
+            String Dirección = br.readLine(); //Se guarda la entrada en una variable
+            System.out.println("Ingrese la edad");
+            String Edad = br.readLine(); //Se guarda la entrada en una variable
+            System.out.println("Ingrese la ciudad");
+            String Ciudad = br.readLine(); //Se guarda la entrada en una variable
+
+            System.out.println(Ciudad + "-" + Dirección  + "-" + Edad + "-" + NyA);
+            break; //Transfiere el control fuera del switch
+        
+        case 9:
+        //Dado un String de entrada (frase, texto, etc) calcular la cantidad de veces que aparece una letra dada.
+            System.out.println("Ingrese una cadena");
+            String cadenas = br.readLine(); //Se guarda la entrada en una variable
+            System.out.println("Ingrese una letra");
+            String letra = br.readLine(); //Se guarda la entrada en una variable
+            char letrita = letra.charAt(0);
+            int cont = 0;
+            for(int i=0; i< cadenas.length(); i++) 
+            {
+                char chr = cadenas.charAt(i);
+                    if(letrita == chr)
+                    {
+                        cont += 1;
+                    }
+            }
+            System.out.println(cont);      
+
+            break;
 
 
         default:
@@ -69,7 +132,7 @@ public class App {
     }
 
     //funciones ------------ no me deja ponerlas en el void
-    public static int factorial( int numero ) {
+    public static int factorial(int numero) {
         int fact = 1;
         for( int i = 1; i <= numero; i++ ) {
            fact *= i;
