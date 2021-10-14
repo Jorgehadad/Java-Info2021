@@ -108,10 +108,9 @@ public class App {
         valuePerHour.add(600);
         valuePerHour.add(320);
         int totalMonto= 0;
-
         for (int i = 0; i < workedHours.size(); i++) {
             totalMonto += workedHours.get(i) * valuePerHour.get(i);
-            totals.add(i, totalMonto);
+            totals.add(i, workedHours.get(i) * valuePerHour.get(i));
         }
         System.out.println(totals);
         System.out.println("Total Final: $" + totalMonto);
@@ -124,13 +123,11 @@ public class App {
         empleados.add(new Empleado(34588901, "Carolina Monzón", 130, 445));
         empleados.add(new Empleado(33099901, "Belén Cáceress", 190, 410));
         empleados.add(new Empleado(29004533, "Chiara Barboza", 300, 398));
-
         for (Empleado i:empleados){
             int sueldo = i.getValorHora() * i.getHorasTrabajadas();
             diccionario.put(i.getDni(), sueldo);
             System.out.println("Empleado: " + i.getNombre() + " - DNI: " + i.getDni() + " - Sueldo: " + sueldo);
         }
-        
         break;
 
         case 7:
@@ -138,10 +135,8 @@ public class App {
 //Con la secuencia de números enteros de principio a final. 
 //Pero si el número es multiplo de 2 colocara el valor “Fizz”, si es múltiplo de 3 “Buzz” y 
 //si es a la vez múltiplo de ambos colocara “FizzBuzz”. 
-
         System.out.println(fizzBuzzFunction(1,6));    // 6 si marca el límite y no se lo incluye
         System.out.println(fizzBuzzFunction(1,8));
-
         break;
 
         default:
@@ -163,7 +158,6 @@ public class App {
 
     public static ArrayList<Integer> factorial2 (int numero,  int numero2) {
         ArrayList<Integer> fact2 = new ArrayList<Integer>();
-
         return fact2;
         }
 
@@ -197,28 +191,23 @@ public class App {
         private int horasTrabajadas;
         private int valorHora;
 
-        public Empleado(int dni, String nombre, int horasTrabajadas, int valorHora){
+    public Empleado(int dni, String nombre, int horasTrabajadas, int valorHora){
             this.dni = dni;
             this.nombre = nombre;
             this.horasTrabajadas = horasTrabajadas;
             this.valorHora = valorHora;
         }
-
         public int getDni() {
             return dni;
         }
-
         public String getNombre() {
             return nombre;
         }
-        
         public int getHorasTrabajadas() {
             return horasTrabajadas;
         }
-
         public int getValorHora() {
             return valorHora;
         }
     }
-
 }
