@@ -92,8 +92,29 @@ public class App {
         case 5:
 //Dados 2 ArrayList que contienen horas-trabajadas (array1) y valor-por-hora(array2) del resumen de carga
 // de horas semanal de un empleado. Se debe generar otra lista que contenga los totales y luego imprimir el total final a cobrar.         
+        ArrayList<Integer> workedHours = new ArrayList<Integer>();
+        ArrayList<Integer> valuePerHour = new ArrayList<Integer>();
+        ArrayList<Integer> totals = new ArrayList<Integer>();
 
+        workedHours.add(6);
+        workedHours.add(7);
+        workedHours.add(8);
+        workedHours.add(4);
+        workedHours.add(5);
 
+        valuePerHour.add(350);
+        valuePerHour.add(345);
+        valuePerHour.add(550);
+        valuePerHour.add(600);
+        valuePerHour.add(320);
+        int totalMonto= 0;
+
+        for (int i = 0; i < workedHours.size(); i++) {
+            totalMonto += workedHours.get(i) * valuePerHour.get(i);
+            totals.add(i, totalMonto);
+        }
+        System.out.println(totals);
+        System.out.println("Total Final: $" + totalMonto);
         break;
 
         case 6:
@@ -117,7 +138,10 @@ public class App {
 //Con la secuencia de números enteros de principio a final. 
 //Pero si el número es multiplo de 2 colocara el valor “Fizz”, si es múltiplo de 3 “Buzz” y 
 //si es a la vez múltiplo de ambos colocara “FizzBuzz”. 
-        System.out.println("No hay coincidencias");
+
+        System.out.println(fizzBuzzFunction(1,6));    // 6 si marca el límite y no se lo incluye
+        System.out.println(fizzBuzzFunction(1,8));
+
         break;
 
         default:
@@ -137,12 +161,33 @@ public class App {
         return fact;
         }
 
-    public static int fizzBuzzFunction(int numero, int numero2) {
-        int fact = 1;
-        for( int i = 1; i <= numero; i++ ) {
-        fact *= i;
+    public static ArrayList<Integer> factorial2 (int numero,  int numero2) {
+        ArrayList<Integer> fact2 = new ArrayList<Integer>();
+
+        return fact2;
         }
-        return fact;
+
+//para función 7
+    public static ArrayList<String> fizzBuzzFunction(int comienzo, int fin) {
+        ArrayList<String> arrayResult = new ArrayList<String>();
+        for( int i = comienzo; i <= fin -1; i++ ) {
+            if ((i % 2 == 0 ) && (i % 3 == 0 )) {
+                arrayResult.add("FizzBuzz");
+                continue;
+            } 
+            if (i % 2 == 0 ) {
+                arrayResult.add("Fizz");
+                continue;
+            } 
+            if (i % 3 == 0 ) {
+                arrayResult.add("Buzz");
+                continue;
+            } else {
+                arrayResult.add(String.valueOf(i));
+                continue;
+            }
+        }
+        return arrayResult;
     }
 
     //para ejercicio 6
