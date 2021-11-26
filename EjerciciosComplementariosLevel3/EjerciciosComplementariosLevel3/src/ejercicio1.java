@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class App {
+public class ejercicio1 {
     public static void main(String[] args) throws Exception {
         //Dada una lista que contiene valores de tipo String, 
         //se deberá filtrar todos los valores que NO sean null o vacío ("")
